@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>[CSS part3] BFC与IFC机制 | Brian Blog | Think Twice, Code Once.</title>
+  <title>浅析BFC与IFC机制 | Brian Blog | Think Twice, Code Once.</title>
 
   
   <meta name="author" content="ZhangYuBrian">
@@ -22,12 +22,12 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="[CSS part3] BFC与IFC机制"/>
+  <meta property="og:title" content="浅析BFC与IFC机制"/>
 
   <meta property="og:site_name" content="Brian Blog"/>
 
   
-  <meta property="og:image" content="../img/css.jpeg" />
+  <meta property="og:image" content="/favicon.png"/>
   
 
   <link href="/favicon.png" rel="icon">
@@ -64,7 +64,7 @@
 
   
     
-    <h3 class="article-title"><span>[CSS part3] BFC与IFC机制</span></h3>
+    <h3 class="article-title"><span>浅析BFC与IFC机制</span></h3>
     
   
 
@@ -84,11 +84,13 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="CSS-part3-BFC与IFC机制"><a href="#CSS-part3-BFC与IFC机制" class="headerlink" title="[CSS part3] BFC与IFC机制"></a>[CSS part3] BFC与IFC机制</h1><h2 id="格式化上下文"><a href="#格式化上下文" class="headerlink" title="格式化上下文"></a>格式化上下文</h2><p>所谓的格式化上下文（Formatting context）是 W3C CSS2.1 规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则。它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。</p>
+        <h2 id="格式化上下文"><a href="#格式化上下文" class="headerlink" title="格式化上下文"></a>格式化上下文</h2><p>所谓的格式化上下文（Formatting context）是 W3C CSS2.1 规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则。它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。</p>
 <p>常见的<code>Formatting Context</code> 有：<code>Block Formatting Context</code>（BFC | 块级格式化上下文） 和 <code>Inline Formatting Context</code>（IFC |行内格式化上下文）。</p>
 <p>一个页面是由很多个 <code>Box</code> 组成的，元素的类型和 <code>display</code> 属性决定了这个 <code>Box</code> 的类型。不同类型的 Box，会参与不同的 Formatting Context。</p>
 <p><code>Block level</code>的box会参与形成BFC，比如<code>display</code>值为<code>block，list-item，table</code>的元素。</p>
 <p><code>Inline level</code>的box会参与形成IFC，比如<code>display</code>值为<code>inline，inline-table，inline-block</code>的元素。</p>
+<span id="more"></span>
+
 <h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><p>BFC是一个独立的区域，内部的元素按照它的规则渲染，并不会与BFC外部打交道。</p>
 <p>BFC的布局规则如下：<br>  1 内部的盒子会在垂直方向，一个个地放置；<br>  2 BFC是页面上的一个隔离的独立容器；<br>  3 属于<strong>同一个BFC</strong>的 两个<strong>相邻Box</strong>的 <strong>上下margin</strong>会发生重叠 ；<br>  4 计算BFC的高度时，浮动元素也参与计算<br>  5 每个元素的左边，与包含的盒子的左边相接触，即使存在浮动也是如此；<br>  6 BFC的区域不会与float重叠；</p>
 <p>那么如何触发 BFC呢？只要元素满足下面任一条件即可触发 BFC 特性：</p>

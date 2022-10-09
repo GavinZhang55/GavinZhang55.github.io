@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>[CSS part3] BFC与IFC机制 | Brian Blog | Think Twice, Code Once.</title>
+  <title>CSS布局与常见响应式布局 | Brian Blog | Think Twice, Code Once.</title>
 
   
   <meta name="author" content="ZhangYuBrian">
@@ -22,12 +22,12 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="[CSS part3] BFC与IFC机制"/>
+  <meta property="og:title" content="CSS布局与常见响应式布局"/>
 
   <meta property="og:site_name" content="Brian Blog"/>
 
   
-  <meta property="og:image" content="../img/css.jpeg" />
+  <meta property="og:image" content="/favicon.png"/>
   
 
   <link href="/favicon.png" rel="icon">
@@ -64,7 +64,7 @@
 
   
     
-    <h3 class="article-title"><span>[CSS part3] BFC与IFC机制</span></h3>
+    <h3 class="article-title"><span>CSS布局与常见响应式布局</span></h3>
     
   
 
@@ -84,12 +84,14 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="CSS-part5-响应式布局"><a href="#CSS-part5-响应式布局" class="headerlink" title="[CSS part5] 响应式布局"></a>[CSS part5] 响应式布局</h1><p>响应式布局负责实现页面在不同设备（设备宽度）上显示不同样式。</p>
+        <p>响应式布局负责实现页面在不同设备（设备宽度）上显示不同样式。</p>
 <ul>
 <li>流体网格线（流式布局）概念要求页面元素使用相对单位，如百分比或em调整大小，而不是绝对单位，如像素。 rem类似于em，em是父元素字体大小，rem的基准是相对于html元素的字体大小。比如，根元素(html)设置font-size&#x3D;12px，非根元素设置width: 2rem，则换成px表示就是24px。常用em+flexible.js</li>
 <li>响应式图片应以相对单位调整大小（最大到 100%），防止它们显示于它们的上层元素外。</li>
 <li>媒体查询允许页面根据浏览设备而使用不同 CSS 样式规则，最常用的是浏览器的宽度。</li>
 </ul>
+<span id="more"></span>
+
 <h2 id="常见的布局方法"><a href="#常见的布局方法" class="headerlink" title="常见的布局方法"></a>常见的布局方法</h2><ul>
 <li><strong>table 表格布局</strong>：早期使用的布局，如今用得很少。</li>
 <li><strong>float 浮动 + margin</strong>：为了兼容低版本的IE浏览器，很多网站（比如腾讯新闻、网易新闻、淘宝等）都会采用 float 布局，涉及到 BFC 和清除浮动。</li>
